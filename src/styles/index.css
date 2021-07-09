@@ -1,3 +1,15 @@
 @import "_base.css";
 @import "_fonts.css";
 @import "_colors.css";
+
+.alive {
+  background-color: green;
+}
+
+.dead {
+  background-color: red;
+}
+
+.unknown {
+  background-color: grey;
+}
