@@ -1,14 +1,30 @@
 const fetchButton = document.getElementById("button-fetch");
+const body = document.querySelector("body");
+const personList = document.querySelector(".personList");
 
-const option = document.querySelector("option");
+const select = document.querySelector("select");
 
 fetchButton.addEventListener("click", () => {
+  deleteResults();
+
   fetch("https://rickandmortyapi.com/api/character")
     .then((response) => response.json())
     .then((data) => {
-      if (option.value === "alive") {
+      if (select.value === "alive") {
         data.results.forEach((e) => {
           if (e.status === "Alive") {
+            createPerson(e);
+          }
+        });
+      } else if (select.value === "dead") {
+        data.results.forEach((e) => {
+          if (e.status === "Dead") {
+            createPerson(e);
+          }
+        });
+      } else if (select.value === "unknown") {
+        data.results.forEach((e) => {
+          if (e.status === "unknown") {
             createPerson(e);
           }
         });
@@ -26,9 +42,13 @@ function createPerson(person) {
   personList.append(section);
   section.append(personName);
   section.append(personImg);
+  return section;
 }
 
 //functions
+function deleteResults() {
+  personList.innerHTML = "";
+}
 
 function createSection() {
   const section = document.createElement("section");
