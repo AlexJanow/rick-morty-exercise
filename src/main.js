@@ -1,8 +1,7 @@
 const fetchButton = document.getElementById("button-fetch");
-const body = document.querySelector("body");
 const personList = document.querySelector(".personList");
-
 const select = document.querySelector("select");
+const searchField = document.querySelector("input");
 
 fetchButton.addEventListener("click", () => {
   deleteResults();
@@ -13,24 +12,64 @@ fetchButton.addEventListener("click", () => {
       if (select.value === "alive") {
         data.results.forEach((e) => {
           if (e.status === "Alive") {
-            createPerson(e);
+            if (searchField.value === "") {
+              createPerson(e);
+            } else if (searchField.value === e.name) {
+              createPerson(e);
+            }
           }
         });
       } else if (select.value === "dead") {
         data.results.forEach((e) => {
           if (e.status === "Dead") {
-            createPerson(e);
+            if (searchField.value === "") {
+              createPerson(e);
+            } else if (searchField.value === e.name) {
+              createPerson(e);
+            }
           }
         });
       } else if (select.value === "unknown") {
         data.results.forEach((e) => {
           if (e.status === "unknown") {
-            createPerson(e);
+            if (searchField.value === "") {
+              createPerson(e);
+            } else if (searchField.value === e.name) {
+              createPerson(e);
+            }
           }
         });
       }
     });
 });
+
+// fetchButton.addEventListener("click", () => {
+//   deleteResults();
+
+//   fetch("https://rickandmortyapi.com/api/character")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       if (select.value === "alive") {
+//         data.results.forEach((e) => {
+//           if (e.status === "Alive") {
+//             createPerson(e);
+//           }
+//         });
+//       } else if (select.value === "dead") {
+//         data.results.forEach((e) => {
+//           if (e.status === "Dead") {
+//             createPerson(e);
+//           }
+//         });
+//       } else if (select.value === "unknown") {
+//         data.results.forEach((e) => {
+//           if (e.status === "unknown") {
+//             createPerson(e);
+//           }
+//         });
+//       }
+//     });
+// });
 
 //big function
 function createPerson(person) {
