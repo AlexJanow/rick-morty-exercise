@@ -1,13 +1,18 @@
 const fetchButton = document.getElementById("button-fetch");
-const status = document.getElementById("status");
+
+const option = document.querySelector("option");
 
 fetchButton.addEventListener("click", () => {
   fetch("https://rickandmortyapi.com/api/character")
     .then((response) => response.json())
     .then((data) => {
-      data.results.forEach((e) => {
-        createPerson(e);
-      });
+      if (option.value === "alive") {
+        data.results.forEach((e) => {
+          if (e.status === "Alive") {
+            createPerson(e);
+          }
+        });
+      }
     });
 });
 
