@@ -1,3 +1,63 @@
 @import "_base.css";
 @import "_fonts.css";
 @import "_colors.css";
+
+.alive {
+  background-color: green;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  margin: auto;
+}
+
+.dead {
+  background-color: red;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  margin: auto;
+}
+
+.unknown {
+  background-color: grey;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  margin: auto;
+}
+
+.personList section {
+  width: fit-content;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+body {
+  background-color: whitesmoke;
+  font-size: large;
+}
+
+select {
+  font-size: large;
+}
+
+button {
+  border: none;
+  background-color: green;
+  font-size: large;
+  color: whitesmoke;
+}
+
+header {
+  background-color: lightseagreen;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+footer {
+  width: fit-content;
+  margin: auto;
+}

@@ -8,10 +8,23 @@
     <title>Vite App</title>
   </head>
   <body>
-    <header>
-      <h1>Hello World</h1>
-    </header>
-    <div id="app"></div>
+    <div id="app">
+      <header>
+        <h1>RickMoFetch</h1>
+
+        <label for="searchField">Search for name:</label>
+        <input type="text" name="searchField" id="searchField" /><br />
+        <label for="status">Status of person:</label>
+        <select name="status" id="status">
+          <option value="alive">alive</option>
+          <option value="dead">dead</option>
+          <option value="unknown">unknown</option>
+        </select>
+        <button id="button-fetch">fetch</button>
+        <div class="personList"></div>
+      </header>
+    </div>
+    <footer>Made without love 💔 by Alex</footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
